@@ -5,6 +5,6 @@ for($a = 1; $a <= 10; $a++){
     }else{
         echo $a. "B";
     }
-    echo ", ";
+    echo "<br>";
 }
 ?>
