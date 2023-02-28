@@ -4,13 +4,13 @@
             "id" => "E001",
             "name" => "John Doe",
             "birthdate" => "05-11-1998",
-            "gender" => "M",
+            "gender" => "Male",
             "salary" => 8000000
         ],[
             "id" => "E002",
             "name" => "Lyra",
             "birthdate" => "13-01-1998",
-            "gender" => "F",
+            "gender" => "Female",
             "salary" => 10650000
         ],[
             "id" => "E003",
@@ -52,13 +52,16 @@ table, th, td {
   </tr>
   <?php
   foreach($datas as $data){
+    $gender = ($data["gender"] == 'F') ? 'Female' : 'Male';
+    $birthdate = date('d F Y', strtotime($data['birthdate']));
+    $salary = "Rp" . number_format($data['salary'], 0,',', '.');
   ?>
   <tr>
     <td><?= $data["id"] ?></td>
     <td><?= $data["name"] ?></td>
-    <td><?= $data["birthdate"] ?></td>
-    <td><?= $data["gender"] ?></td>
-    <td><?= $data["salary"] ?></td>
+    <td><?= $birthdate ?></td>
+    <td><?= $gender ?></td>
+    <td><?= $salary ?></td>
   </tr>
   <?php } ?>
 </table>
