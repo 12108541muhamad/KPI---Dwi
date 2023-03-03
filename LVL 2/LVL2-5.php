@@ -115,7 +115,7 @@ table, th, td {
         ?>
   <tr>
       <td><?= $id ?></td>
-      <td><?= $name ?></td>
+      <td><?= $jumlah['name'] ?></td>
       <td><?= $jumlah["Hadir"] ?></td>
       <td><?= $jumlah["Sakit"]?></td>
       <td><?= $jumlah["Cuti"]?></td>
