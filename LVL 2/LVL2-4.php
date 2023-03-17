@@ -1,54 +1,75 @@
 <?php
+$dates = array(
+    'date' => [
+        "26-12-2022",
+        "27-12-2022",
+        "28-12-2022",
+        "29-12-2022",
+        "30-12-2022",
+        "31-12-2022"
+    ],
+    'E001' => array(
+        'Hadir',
+        'Hadir',
+        'Hadir',
+        'Hadir',
+        'Hadir',
+        'Hadir'
+    ),
+    'E002' => array(
+        'Hadir',
+        'Hadir',
+        'Sakit',
+        'Hadir',
+        'Hadir',
+        'Hadir'
+    ),
+    'E003' => array(
+        'Sakit',
+        'Sakit',
+        'Kabur',
+        'Hadir',
+        'Hadir',
+        'Cuti'
+    ),
+    'E004' => array(
+        'Hadir',
+        'Hadir',
+        'Hadir',
+        'Sakit',
+        'Cuti',
+        'Cuti'
+    ),
+    'E005' => array(
+        'Sakit',
+        'Hadir',
+        'Hadir',
+        'Hadir',
+        'Cuti',
+        'Hadir'
+    ),
+);
 $datas = array(
     array(
         "id" => "E001",
         "name" => "John Dea",
-        26 => "Hadir",
-        27 => "Hadir",
-        28 => "Hadir",
-        29 => "Hadir",
-        30 => "Hadir",
-        31 => "Hadir"
     ),
     array(
         "id" => "E002",
         "name" => "Lyra",
-        26 => "Hadir",
-        27 => "Hadir",
-        28 => "Sakit",
-        29 => "Hadir",
-        30 => "Hadir",
-        31 => "Hadir"
+
     ),
     array(
         "id" => "E003",
         "name" => "Grace",
-        26 => "Sakit",
-        27 => "Sakit",
-        28 => "Kabur",
-        29 => "Hadir",
-        30 => "Hadir",
-        31 => "Cuti"
     ),
     array(
         "id" => "E004",
         "name" => "Idris",
-        26 => "Hadir",
-        27 => "Hadir",
-        28 => "Hadir",
-        29 => "Sakit",
-        30 => "Cuti",
-        31 => "Cuti"
     ),
     array(
         "id" => "E005",
         "name" => "Gwen",
-        26 => "Sakit",
-        27 => "Hadir",
-        28 => "Hadir",
-        29 => "Hadir",
-        30 => "Cuti",
-        31 => "Kabur"
     )
 );
 ?>
@@ -66,25 +87,23 @@ table, th, td {
     <tr>
         <th>EmployeeID</th>
         <th>Name</th>
-        <th>26-12-2022</th>
-        <th>27-12-2022</th>
-        <th>28-12-2022</th>
-        <th>29-12-2022</th>
-        <th>30-12-2022</th>
-        <th>31-12-2022</th>
+        <?php 
+        foreach ($dates['date'] as $tanggal) {
+                echo '<th>'. $tanggal. '</th>';
+        }
+        ?>
     </tr>
     <?php
     foreach($datas as $data){
         ?>
-  <tr>
+    <tr>
       <td><?= $data["id"] ?></td>
       <td><?= $data["name"] ?></td>
-      <td><?= $data["26"] ?></td>
-      <td><?= $data["27"]?></td>
-      <td><?= $data["28"]?></td>
-      <td><?= $data["29"]?></td>
-      <td><?= $data["30"]?></td>
-      <td><?= $data["31"]?></td>
+      <?php 
+        foreach ($dates[$data['id']] as $keterangan) {
+            echo '<td>'.$keterangan.'</td>';
+        }
+        ?>
     </tr>
   <?php } ?>
 </table>
