@@ -53,23 +53,37 @@ $datas = array(
     array(
         "id" => "E001",
         "name" => "John Dea",
+        "birthdate" => "05-11-1998",
+        "gender" => "M",
+        "salary" => 8000000
     ),
     array(
         "id" => "E002",
         "name" => "Lyra",
-
+        "birthdate" => "13-01-1998",
+        "gender" => "F",
+        "salary" => 10650000
     ),
     array(
         "id" => "E003",
         "name" => "Grace",
+        "birthdate" => "21-08-1995",
+        "gender" => "F",
+        "salary" => 3450000
     ),
     array(
         "id" => "E004",
         "name" => "Idris",
+        "birthdate" => "21-07-1993",
+        "gender" => "M",
+        "salary" => 12300000
     ),
     array(
         "id" => "E005",
         "name" => "Gwen",
+        "birthdate" => "05-09-2000",
+        "gender" => "F",
+        "salary" => 1500000
     )
 );
 ?>
@@ -87,6 +101,9 @@ table, th, td {
     <tr>
         <th>EmployeeID</th>
         <th>Name</th>
+        <th>Birthdate</th>
+        <th>Gender</th>
+        <th>Salary</th>
         <?php 
         foreach ($dates['date'] as $tanggal) {
                 echo '<th>'. $tanggal. '</th>';
@@ -95,15 +112,21 @@ table, th, td {
     </tr>
     <?php
     foreach($datas as $data){
+        $gender = ($data["gender"] == 'F') ? 'Female' : 'Male';
+        $birthdate = date('d F Y', strtotime($data['birthdate']));
+        $salary = "Rp" . number_format($data['salary'], 0,',');
         ?>
     <tr>
-      <td><?= $data["id"] ?></td>
-      <td><?= $data["name"] ?></td>
-      <?php 
-        foreach ($dates[$data['id']] as $keterangan) {
-            echo '<td>'.$keterangan.'</td>';
-        }
-        ?>
+        <td><?= $data["id"] ?></td>
+        <td><?= $data["name"] ?></td>
+        <td><?= $birthdate ?></td>
+        <td><?= $gender ?></td>
+        <td style="text-align: right;"><?= $salary ?></td>
+        <?php 
+            foreach ($dates[$data['id']] as $keterangan) {
+                echo '<td>'.$keterangan.'</td>';
+            }
+            ?>
     </tr>
   <?php } ?>
 </table>

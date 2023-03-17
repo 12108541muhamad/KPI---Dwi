@@ -61,7 +61,7 @@ table, th, td {
     <td><?= $data["name"] ?></td>
     <td><?= $birthdate ?></td>
     <td><?= $gender ?></td>
-    <td><?= $salary ?></td>
+    <td style="text-align: right;"><?= $salary ?></td>
   </tr>
   <?php } ?>
 </table>
