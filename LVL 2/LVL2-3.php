@@ -83,7 +83,7 @@
     foreach($datas as $data){
         $gender = ($data['gender'] == 'F') ? 'Female' : 'Male';
         $birthdate = date('d F Y', strtotime($data['birthdate']));
-        $salary = "Rp" . number_format($data['salary'], 0,',');
+        $salary = "Rp" . number_format($data['salary'], 0,'.', ',');
         $hobiId = $data['hobby'];
         ?>
             <tr>
@@ -94,13 +94,13 @@
                 <td style="text-align: right;"><?= $salary ?></td>
                 <td>
                     <?php 
-              foreach($data['hobby'] as $key => $hobbyId) {
-                  echo $hobbies[$hobbyId];
-                  if($key !== array_key_last($data['hobby'])) {
-                      echo ", ";
-                  }
-              }
-              ?>
+                    foreach($data['hobby'] as $key => $hobbyId) {
+                        echo $hobbies[$hobbyId];
+                        if($key !== (count($data['hobby']) - 1)) {
+                            echo ", ";
+                        }
+                    }
+                    ?>
                 </td>
             </tr>
         </tbody>

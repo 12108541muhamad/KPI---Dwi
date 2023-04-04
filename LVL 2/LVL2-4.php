@@ -1,52 +1,46 @@
 <?php
 $dates = array(
-    'date' => [
-        "26-12-2022",
-        "27-12-2022",
-        "28-12-2022",
-        "29-12-2022",
-        "30-12-2022",
-        "31-12-2022"
-    ],
-    'E001' => array(
-        'Hadir',
-        'Hadir',
-        'Hadir',
-        'Hadir',
-        'Hadir',
-        'Hadir'
+    '26-12-2022' => array(
+        'E001' => 'Hadir',
+        'E002' => 'Hadir',
+        'E003' => 'Sakit',
+        'E004' => 'Hadir',
+        'E005' => 'Sakit'
     ),
-    'E002' => array(
-        'Hadir',
-        'Hadir',
-        'Sakit',
-        'Hadir',
-        'Hadir',
-        'Hadir'
+    '27-12-2022' => array(
+        'E001' => 'Hadir',
+        'E002' => 'Hadir',
+        'E003' => 'Sakit',
+        'E004' => 'Hadir',
+        'E005' => 'Hadir'
     ),
-    'E003' => array(
-        'Sakit',
-        'Sakit',
-        'Kabur',
-        'Hadir',
-        'Hadir',
-        'Cuti'
+    '28-12-2022' => array(
+        'E001' => 'Hadir',
+        'E002' => 'Sakit',
+        'E003' => 'Kabur',
+        'E004' => 'Hadir',
+        'E005' => 'Hadir'
     ),
-    'E004' => array(
-        'Hadir',
-        'Hadir',
-        'Hadir',
-        'Sakit',
-        'Cuti',
-        'Cuti'
+    '29-12-2022' => array(
+        'E001' => 'Hadir',
+        'E002' => 'Hadir',
+        'E003' => 'Hadir',
+        'E004' => 'Sakit',
+        'E005' => 'Hadir'
     ),
-    'E005' => array(
-        'Sakit',
-        'Hadir',
-        'Hadir',
-        'Hadir',
-        'Cuti',
-        'Hadir'
+    '30-12-2022' => array(
+        'E001' => 'Hadir',
+        'E002' => 'Hadir',
+        'E003' => 'Hadir',
+        'E004' => 'Cuti',
+        'E005' => 'Cuti'
+    ),
+    '31-12-2022' => array(
+        'E001' => 'Hadir',
+        'E002' => 'Hadir',
+        'E003' => 'Cuti',
+        'E004' => 'Cuti',
+        'E005' => 'Hadir'
     ),
 );
 $datas = array(
