@@ -58,47 +58,55 @@
 <!DOCTYPE html>
 <html>
 <style>
-table, th, td {
-  border:1px solid black;
-}
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
 </style>
+
 <body>
 
-<table style="width:100%">
-  <tr>
-    <th>EmployeeID</th>
-    <th>Name</th>
-    <th>Birthdate</th>
-    <th>Gender</th>
-    <th>Salary</th>
-    <th>Hobby</th>
-  </tr>
-  <?php
-  foreach($datas as $data){
-      $gender = ($data['gender'] == 'F') ? 'Female' : 'Male';
-      $birthdate = date('d F Y', strtotime($data['birthdate']));
-      $salary = "Rp" . number_format($data['salary'], 0,',');
-      $hobiId = $data['hobby'];
-      ?>
-    <tr>
-        <td><?= $data["id"] ?></td>
-        <td><?= $data["name"] ?></td>
-        <td><?= $birthdate ?></td>
-        <td><?= $gender ?></td>
-        <td style="text-align: right;"><?= $salary ?></td>
-        <td>
-            <?php 
-            foreach($data['hobby'] as $key => $hobbyId) {
-                echo $hobbies[$hobbyId];
-                if($key !== array_key_last($data['hobby'])) {
-                    echo ", ";
-                }
-            }
-            ?>
-        </td>
-    </tr>
-  <?php } ?>
-</table>
+    <table style="width:100%">
+        <thead>
+            <tr>
+                <th>EmployeeID</th>
+                <th>Name</th>
+                <th>Birthdate</th>
+                <th>Gender</th>
+                <th>Salary</th>
+                <th>Hobby</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+    foreach($datas as $data){
+        $gender = ($data['gender'] == 'F') ? 'Female' : 'Male';
+        $birthdate = date('d F Y', strtotime($data['birthdate']));
+        $salary = "Rp" . number_format($data['salary'], 0,',');
+        $hobiId = $data['hobby'];
+        ?>
+            <tr>
+                <td><?= $data["id"] ?></td>
+                <td><?= $data["name"] ?></td>
+                <td><?= $birthdate ?></td>
+                <td><?= $gender ?></td>
+                <td style="text-align: right;"><?= $salary ?></td>
+                <td>
+                    <?php 
+              foreach($data['hobby'] as $key => $hobbyId) {
+                  echo $hobbies[$hobbyId];
+                  if($key !== array_key_last($data['hobby'])) {
+                      echo ", ";
+                  }
+              }
+              ?>
+                </td>
+            </tr>
+        </tbody>
+        <?php } ?>
+    </table>
 
 </body>
+
 </html>
