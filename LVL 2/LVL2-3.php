@@ -106,7 +106,5 @@
         </tbody>
         <?php } ?>
     </table>
-
 </body>
-
 </html>
